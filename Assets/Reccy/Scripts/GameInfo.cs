@@ -42,7 +42,7 @@ public class GameInfo : MonoBehaviour
             //do lose thing
             print("you lost");
         }
-
+//TODO: cutszene or something for ending condition.
 
     }
 }

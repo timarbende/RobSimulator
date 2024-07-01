@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
 {
 
     public float time;
-    public TextMeshProUGUI display;
+    public TextMeshPro display3D;
     private bool _timerIsRunning = true;
 
     private UnityEvent callWhenExpired;
@@ -33,8 +33,6 @@ public class Timer : MonoBehaviour
           
         }
         
-        //TODO: cutszene or something for ending condition.
-        //TODO make this script listen if you have succeeded
         callWhenExpired.Invoke();
     }
 
@@ -49,7 +47,7 @@ public class Timer : MonoBehaviour
 
         string seconds = secs.ToString();
         if (secs < 10) seconds = "0" + seconds;
-        display.text = minutes + " : " + seconds;
+        display3D.text= minutes + ":" + seconds;
 
     }
 }
