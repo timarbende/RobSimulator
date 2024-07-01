@@ -7,7 +7,6 @@ using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
-
     public float time;
     public TextMeshPro display3D;
     private bool _timerIsRunning = true;
@@ -23,16 +22,15 @@ public class Timer : MonoBehaviour
     }
 
 
-    IEnumerator  timeee()
+    IEnumerator timeee()
     {
-        while(_timerIsRunning)
+        while (_timerIsRunning)
         {
-             DisplayNewTime();
+            DisplayNewTime();
             yield return new WaitForSeconds(1f);
             time -= 1f;
-          
         }
-        
+
         callWhenExpired.Invoke();
     }
 
@@ -47,7 +45,6 @@ public class Timer : MonoBehaviour
 
         string seconds = secs.ToString();
         if (secs < 10) seconds = "0" + seconds;
-        display3D.text= minutes + ":" + seconds;
-
+        display3D.text = minutes + ":" + seconds;
     }
 }

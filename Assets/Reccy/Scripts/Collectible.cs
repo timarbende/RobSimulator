@@ -8,10 +8,11 @@ public class Collectible : MonoBehaviour
     // Start is called before the first frame update
     public float score;
     private UnityEvent AddToScore;
+
     void Start()
     {
         AddToScore = new UnityEvent();
-        AddToScore.AddListener(delegate {  GameInfo.Instance.UpdateScore(score);});
+        AddToScore.AddListener(delegate { GameInfo.Instance.UpdateScore(score); });
     }
 
 
@@ -25,6 +26,5 @@ public class Collectible : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

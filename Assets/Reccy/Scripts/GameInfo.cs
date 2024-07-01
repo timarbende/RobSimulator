@@ -8,16 +8,17 @@ public class GameInfo : MonoBehaviour
     public static GameInfo Instance { get; private set; }
     public float score;
     public float winScore;
-    private void Awake() 
+
+    private void Awake()
     {
-        if (Instance != null && Instance != this) 
-        { 
-            Destroy(this); 
-        } 
-        else 
-        { 
-            Instance = this; 
-        } 
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
 //        print("instantiated");
     }
 
@@ -30,7 +31,6 @@ public class GameInfo : MonoBehaviour
 
     public void GameEnding()
     {
-        
         if (score >= winScore)
         {
             //do winning thing
@@ -43,6 +43,5 @@ public class GameInfo : MonoBehaviour
             print("you lost");
         }
 //TODO: cutszene or something for ending condition.
-
     }
 }
