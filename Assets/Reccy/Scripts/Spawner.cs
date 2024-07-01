@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     public int amtToSpawn;
     private int _spawnPointAmt;
     
-//TODO: make prefabs out of SpawnItems
+
     void Start()
     {
         SelectSpawnPoints();
@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
             
             int a = Random.Range(0, spawnItems.Count);
             var f=Instantiate(spawnItems[a], spawnPoints[i].transform.position,spawnPoints[i].transform.rotation );
-            f.SetActive(true);
+          //  f.SetActive(true);
             f.transform.parent = spawnPoints[i].transform;
             
         }
