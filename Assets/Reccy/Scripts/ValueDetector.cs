@@ -22,10 +22,14 @@ public class ValueDetector : MonoBehaviour
         }
 
         mat = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material;
-        Equip(true);
+     //   Equip(true);
     }
 
-    
+    [ContextMenu("a")]
+    public void e()
+    {
+        Equip(true);
+    }
     public void Equip(bool equip)
     {
         IsEquipped = equip;
@@ -52,10 +56,12 @@ public class ValueDetector : MonoBehaviour
         foreach (var valueItem in _valueItems)
         {
             Vector3 a = gameObject.transform.position - valueItem.transform.position;
+            
             if (a.magnitude < radius)
             {
+                print("a.mag : " +a.magnitude+" "+radius);
                SetLamp(true);
-               break;
+               return;
             }
         }
         SetLamp(false);
