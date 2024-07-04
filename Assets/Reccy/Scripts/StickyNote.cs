@@ -1,24 +1,35 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+public delegate void OnDeselect();
 public class StickyNote : MonoBehaviour
 {
     public bool selected;
     private bool canProject;
     public GameObject sticky;
+    private Vector3 projectPos;
+    public OnDeselect respawnCall;
+    private GameObject newParent;
 
 
 
+    [ContextMenu("s")]
     public void OnSelection()
     {
         selected = true;
 
     }
+    
+    [ContextMenu("d")]
     public void OnDisSelection()
     {
 
         selected = false;
+        //respawn new sticky
+        respawnCall?.Invoke();
+        Attatch();
+        
     }
     
 
@@ -37,16 +48,18 @@ public class StickyNote : MonoBehaviour
                 {
                     Vector3 vec = hit.point;
                     Vector3 a = gameObject.transform.position - hit.point;
-                  Vector3 f=  vec+a*0.05f;
-                    print(vec + "name " +f);
+                    newParent = hit.collider.gameObject;
+                 projectPos=  vec+a*0.05f;
+//                    print(vec + "name " +projectPos);
                  //   gameObject.transform.position = vec;
                     canProject = true;
-                    project(f);
+                    project(projectPos);
                 }
                 else
                 {
                     canProject = false;
                     project(Vector3.zero);
+                    newParent = null;
                 }
         
     }
@@ -57,13 +70,39 @@ public class StickyNote : MonoBehaviour
         if (canProject)
         {
             sticky.transform.position = vector;
-            if (!sticky.activeSelf) sticky.SetActive(true);
+            if (!sticky.activeSelf)
+            {
+                sticky.SetActive(true);
+                this.transform.parent = newParent.transform;
+            }
+            
         }
         else
         {
             if (sticky.activeSelf) sticky.SetActive(false);
         }
     }
-    
-    
+
+    public void Attatch()
+    {
+        if (canProject)
+        {
+            gameObject.transform.position = projectPos;
+            sticky.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+            //acutally destory
+            //Destroy(this);
+        }
+        
+    }
+
+    public void Respawner(StickyBlock b)
+    {
+        respawnCall += b.respawnItem;
+
+    }
+
 }
