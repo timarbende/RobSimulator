@@ -30,7 +30,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
         [SerializeField]
         [Range(0f, 20f)]
-        [Tooltip("Multiplies transform position interpolation as a factor of Time.deltaTime. If 0, no smoothing will be applied.")]
+        [Tooltip(
+            "Multiplies transform position interpolation as a factor of Time.deltaTime. If 0, no smoothing will be applied.")]
         float m_SmoothingSpeed = 16f;
 
         /// <summary>
@@ -43,7 +44,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         }
 
         [SerializeField]
-        [Tooltip("When this component is no longer the target of the poke, the Poke Follow Transform returns to the original position.")]
+        [Tooltip(
+            "When this component is no longer the target of the poke, the Poke Follow Transform returns to the original position.")]
         bool m_ReturnToInitialPosition = true;
 
         /// <summary>
@@ -83,8 +85,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             set => m_ClampToMaxDistance = value;
         }
 
-        [SerializeField]
-        [Tooltip("The maximum distance from this transform that the Poke Follow Transform can move.")]
+        [SerializeField] [Tooltip("The maximum distance from this transform that the Poke Follow Transform can move.")]
         float m_MaxDistance;
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         protected void Awake()
         {
             m_MultiPokeStateDataProvider = GetComponentInParent<IMultiPokeStateDataProvider>();
-            if(m_MultiPokeStateDataProvider == null)
+            if (m_MultiPokeStateDataProvider == null)
                 m_PokeDataProvider = GetComponentInParent<IPokeStateDataProvider>();
         }
 
@@ -133,11 +134,13 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             {
                 m_InitialPosition = m_PokeFollowTransform.localPosition;
                 m_BindingsGroup.AddBinding(m_TransformTweenableVariable.Subscribe(OnTransformTweenableVariableUpdated));
-                
-                if(m_MultiPokeStateDataProvider != null)
-                    m_BindingsGroup.AddBinding(m_MultiPokeStateDataProvider.GetPokeStateDataForTarget(transform).Subscribe(OnPokeStateDataUpdated));
-                else if(m_PokeDataProvider != null)
-                    m_BindingsGroup.AddBinding(m_PokeDataProvider.pokeStateData.SubscribeAndUpdate(OnPokeStateDataUpdated));
+
+                if (m_MultiPokeStateDataProvider != null)
+                    m_BindingsGroup.AddBinding(m_MultiPokeStateDataProvider.GetPokeStateDataForTarget(transform)
+                        .Subscribe(OnPokeStateDataUpdated));
+                else if (m_PokeDataProvider != null)
+                    m_BindingsGroup.AddBinding(
+                        m_PokeDataProvider.pokeStateData.SubscribeAndUpdate(OnPokeStateDataUpdated));
             }
             else
             {
@@ -166,6 +169,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                 m_IsFirstFrame = false;
                 return;
             }
+
             m_TransformTweenableVariable.HandleTween(m_SmoothingSpeed > 0f ? Time.deltaTime * m_SmoothingSpeed : 1f);
         }
 
