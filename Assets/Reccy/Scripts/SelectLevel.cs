@@ -7,11 +7,14 @@ using UnityEngine.Events;
 public class SelectLevel : MonoBehaviour
 {
     public LevelSetup lev;
+    public ShowInText show;
     public UnityEvent<int> levelEvent;
     void Start()
     {
         levelEvent = new UnityEvent<int>();
         levelEvent.AddListener(lev.SetLevel);
+        levelEvent.AddListener(show.ShowLevel);
+        levelEvent.Invoke(-1);
 
     }
 
@@ -19,9 +22,21 @@ public class SelectLevel : MonoBehaviour
     {
         if (other.CompareTag("sticky"))
         {
-            var a = other.gameObject.transform.parent.gameObject.name;
-            var f = int.Parse(a);
-            levelEvent.Invoke(f);
+            Level leve = other.gameObject.GetComponent<Level>();
+            levelEvent.Invoke(leve.number);
+            leve.InstantiateCollectibles();
+            
+            
+        }
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("sticky"))
+        {
+            Level leve = other.gameObject.GetComponent<Level>();
+            leve.ClearSpawner();
+            levelEvent.Invoke(-1);
         }
     }
 }
