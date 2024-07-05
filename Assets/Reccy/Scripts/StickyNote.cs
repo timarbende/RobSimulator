@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
+
 public delegate void OnDeselect();
 public class StickyNote : MonoBehaviour
 {
@@ -47,33 +49,34 @@ public class StickyNote : MonoBehaviour
                 if (Physics.Raycast(transform.position, Vector3.forward, out hit, 20f))
                 {
                     Vector3 vec = hit.point;
+                   // hit.normal;
                     Vector3 a = gameObject.transform.position - hit.point;
                     newParent = hit.collider.gameObject;
                  projectPos=  vec+a*0.05f;
 //                    print(vec + "name " +projectPos);
                  //   gameObject.transform.position = vec;
                     canProject = true;
-                    project(projectPos);
+                    project(projectPos,hit);
                 }
                 else
                 {
                     canProject = false;
-                    project(Vector3.zero);
+                    project(Vector3.zero, hit);
                     newParent = null;
                 }
         
     }
 
 
-    public void project(Vector3 vector)
+    public void project(Vector3 vec,RaycastHit hit)
     {
         if (canProject)
         {
-            sticky.transform.position = vector;
+            sticky.transform.position = vec;
+            sticky.transform.rotation = Quaternion.FromToRotation (Vector3.up, hit.normal);
             if (!sticky.activeSelf)
             {
                 sticky.SetActive(true);
-                this.transform.parent = newParent.transform;
             }
             
         }
@@ -88,6 +91,11 @@ public class StickyNote : MonoBehaviour
         if (canProject)
         {
             gameObject.transform.position = projectPos;
+            gameObject.transform.localRotation = sticky.transform.localRotation;
+            var a = sticky.transform.localRotation;
+           // gameObject.transform.localRotation =Quaternion.Euler(a.x+90f,a.y,a.z);
+            this.transform.parent = newParent.transform;
+
             sticky.SetActive(false);
         }
         else

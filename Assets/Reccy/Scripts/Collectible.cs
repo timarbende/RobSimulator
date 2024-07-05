@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Collectible : MonoBehaviour
 {
     // Start is called before the first frame update
+    public bool notCollectible;
     public float score;
     private UnityEvent AddToScore;
 
@@ -19,6 +20,7 @@ public class Collectible : MonoBehaviour
     [ContextMenu("collect")]
     public void Collect()
     {
+        if (notCollectible) return;
         AddToScore.Invoke();
         gameObject.SetActive(false);
     }
