@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,15 +13,21 @@ public class Timer : MonoBehaviour
     private bool _timerIsRunning = true;
 
     private UnityEvent callWhenExpired;
-
+    private bool _once=true;
     void Start()
     {
-        callWhenExpired = new UnityEvent();
-        callWhenExpired.AddListener(GameInfo.Instance.GameEnding);
-        _timerIsRunning = true;
-        StartCoroutine(timeee());
+                    callWhenExpired = new UnityEvent();
+                    callWhenExpired.AddListener(GameInfo.Instance.GameEnding);
+                    _timerIsRunning = true;
+                   
+                    _once = false;
+                
     }
 
+    private void OnEnable()
+    {
+        StartCoroutine(timeee());
+    }
 
     IEnumerator timeee()
     {

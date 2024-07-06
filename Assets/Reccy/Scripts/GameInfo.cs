@@ -8,6 +8,7 @@ public class GameInfo : MonoBehaviour
     public static GameInfo Instance { get; private set; }
     public float score;
     public float winScore;
+    public TextMeshPro textScore;
     public InitializeLEvel initializer;
 
     private void Awake()
@@ -23,12 +24,14 @@ public class GameInfo : MonoBehaviour
 
 //        print("instantiated");
         initializer.init();
+        UpdateScore(0);
     }
 
 
     public void UpdateScore(float extraScore)
     {
         score += extraScore;
+        textScore.text = "Score: " + score.ToString();
         print(score);
     }
 
