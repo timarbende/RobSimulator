@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,7 +24,7 @@ public class SelectLevel : MonoBehaviour
         if (other.CompareTag("sticky"))
         {
             Level leve = other.gameObject.GetComponent<Level>();
-            levelEvent.Invoke(leve.number);
+    levelEvent.Invoke(leve.number);
             leve.InstantiateCollectibles();
             
             
