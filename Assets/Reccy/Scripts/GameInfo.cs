@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class GameInfo : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class GameInfo : MonoBehaviour
     public float winScore;
     public TextMeshPro textScore;
     public InitializeLEvel initializer;
+    public TextMeshPro endText;
+    public XRRayInteractor ray;
 
     private void Awake()
     {
@@ -25,6 +29,7 @@ public class GameInfo : MonoBehaviour
 //        print("instantiated");
         initializer.init();
         UpdateScore(0);
+       
     }
 
 
@@ -37,17 +42,30 @@ public class GameInfo : MonoBehaviour
 
     public void GameEnding()
     {
+         endText.gameObject.SetActive(true);
         if (score >= winScore)
         {
+           
             //do winning thing
-            print("you won");
+        //    print("you won");
+            endText.text = "you won.";
             return;
         }
         else
         {
             //do lose thing
-            print("you lost");
+           // print("you lost");
+           
+            endText.text = "You lost";
         }
+
+        StartCoroutine(Returner());
 //TODO: cutszene or something for ending condition.
+    }
+    
+    IEnumerator  Returner()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(0);
     }
 }

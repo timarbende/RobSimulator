@@ -14,6 +14,7 @@ public class StickyBlock : MonoBehaviour
     void Start()
     {
       respawnItem();
+      HasInstantiated = false;
     }
 
 
@@ -34,6 +35,7 @@ public class StickyBlock : MonoBehaviour
         {
             GameObject a = Instantiate(instantiatedSticky, spawner.transform);
             StickyNote stick = a.GetComponent<StickyNote>();
+           // print("AAAAAAAAAAAAAAAAAAA");
             stick.Respawner(this);
             HasInstantiated = true;
         }

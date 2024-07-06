@@ -12,5 +12,6 @@ public class InitializeLEvel : MonoBehaviour
     {
        spawner.SetSpawnedItems(setter.ItemsToSpawn);
        spawner.SpawnItems();
+       GameInfo.Instance.winScore = setter.ScoreAmt;
     }
 }

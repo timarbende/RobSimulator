@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public delegate void OnDeselect();
 public class StickyNote : MonoBehaviour
@@ -13,14 +14,25 @@ public class StickyNote : MonoBehaviour
     private Vector3 projectPos;
     public OnDeselect respawnCall;
     private GameObject newParent;
+    private IXRSelectInteractor c;
+    private XRBaseInteractable d;
 
+    private void OnEnable()
+    {
+          d = GetComponent<XRBaseInteractable>();
+        //  var a=gameObject.transform.parent.parent.gameObject;
+      //    var b = a.GetComponent<StickyBlock>();
+     //     Respawner(b);
 
+    }
 
     [ContextMenu("s")]
     public void OnSelection()
     {
+      
+       c = d.firstInteractorSelecting;
         selected = true;
-
+        
     }
     
     [ContextMenu("d")]
@@ -28,9 +40,10 @@ public class StickyNote : MonoBehaviour
     {
 
         selected = false;
+          Attatch();
         //respawn new sticky
         respawnCall?.Invoke();
-        Attatch();
+      
         
     }
     
@@ -46,7 +59,8 @@ public class StickyNote : MonoBehaviour
     public void ProjectRay()
     {
          RaycastHit hit;
-                if (Physics.Raycast(transform.position, Vector3.forward, out hit, 20f))
+       
+                if (Physics.Raycast(transform.position, c.transform.forward, out hit, 5f))
                 {
                     Vector3 vec = hit.point;
                    // hit.normal;
@@ -102,9 +116,9 @@ public class StickyNote : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
             //acutally destory
-            //Destroy(this);
+            Destroy(this);
         }
         
     }

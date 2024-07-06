@@ -16,7 +16,6 @@ public class LoadNewLevel : MonoBehaviour
         foreach (var ob in ldiff.objects)
         {
             lev.ItemsToSpawn.Add(ob.name);  
-       
         }
 
         SceneManager.LoadScene(lev.Level);

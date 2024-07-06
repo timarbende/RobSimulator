@@ -53,16 +53,19 @@ public class ValueDetector : MonoBehaviour
 
     public void checkForValuables()
     {
-        foreach (var valueItem in _valueItems)
+        foreach (GameObject valueItem in _valueItems)
         {
-            Vector3 a = gameObject.transform.position - valueItem.transform.position;
-            
-            if (a.magnitude < radius)
+            if (!valueItem.activeSelf) continue;
+            else
             {
-                print("a.mag : " +a.magnitude+" "+radius);
-               SetLamp(true);
-               return;
+                Vector3 a = gameObject.transform.position - valueItem.transform.position;
+                if (a.magnitude < radius) {
+                    print("a.mag : " +a.magnitude+" "+radius);
+                    SetLamp(true);
+                    return;
+                }
             }
+            
         }
         SetLamp(false);
     }
