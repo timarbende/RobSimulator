@@ -684,6 +684,67 @@ Transform:
   - {fileID: 933555179}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &378311838
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4945272360832684491, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
+      propertyPath: m_Name
+      value: Money LevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4945272360832684491, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697295377853980974, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.4594946
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697295377853980974, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.192
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697295377853980974, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.161
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697295377853980974, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697295377853980974, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697295377853980974, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697295377853980974, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697295377853980974, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697295377853980974, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697295377853980974, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09d381628f3e8d941bec65604bdc0f9f, type: 3}
 --- !u!1 &407225833 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4945272360832684491, guid: ef3873f12e0e4ca4cb0e92ac275f7865, type: 3}
@@ -921,6 +982,7 @@ GameObject:
   - component: {fileID: 620299949}
   - component: {fileID: 620299948}
   - component: {fileID: 620299947}
+  - component: {fileID: 620299950}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -1014,6 +1076,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620299945}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &620299950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620299945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ebfcdeacdefbc42a432ef52d2d4d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lev: {fileID: 11400000, guid: 83013ddc73b2d22499ef21905a625420, type: 2}
+  ldiff: {fileID: 476050568}
+  g: {fileID: 8864225926957707653, guid: 1ff400d992dcf484295c2b583cf4f122, type: 3}
 --- !u!1001 &634164495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2320,3 +2397,4 @@ SceneRoots:
   - {fileID: 375280500}
   - {fileID: 2031767740}
   - {fileID: 1382130186}
+  - {fileID: 378311838}

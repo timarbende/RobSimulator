@@ -8,6 +8,7 @@ public class GameInfo : MonoBehaviour
     public static GameInfo Instance { get; private set; }
     public float score;
     public float winScore;
+    public InitializeLEvel initializer;
 
     private void Awake()
     {
@@ -19,7 +20,9 @@ public class GameInfo : MonoBehaviour
         {
             Instance = this;
         }
+
 //        print("instantiated");
+        initializer.init();
     }
 
 

@@ -74,6 +74,8 @@ public class StickyNote : MonoBehaviour
         {
             sticky.transform.position = vec;
             sticky.transform.rotation = Quaternion.FromToRotation (Vector3.up, hit.normal);
+            gameObject.transform.GetChild(0).transform.localRotation = Quaternion.Euler(new Vector3 (-90,0,0));
+
             if (!sticky.activeSelf)
             {
                 sticky.SetActive(true);
@@ -91,7 +93,7 @@ public class StickyNote : MonoBehaviour
         if (canProject)
         {
             gameObject.transform.position = projectPos;
-            gameObject.transform.localRotation = sticky.transform.localRotation;
+            gameObject.transform.GetChild(0).transform.localRotation = sticky.transform.localRotation;
             var a = sticky.transform.localRotation;
            // gameObject.transform.localRotation =Quaternion.Euler(a.x+90f,a.y,a.z);
             this.transform.parent = newParent.transform;

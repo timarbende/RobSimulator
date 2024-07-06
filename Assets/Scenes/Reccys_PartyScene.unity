@@ -1318,6 +1318,7 @@ GameObject:
   - component: {fileID: 1356058654}
   - component: {fileID: 1356058653}
   - component: {fileID: 1356058655}
+  - component: {fileID: 1356058656}
   m_Layer: 0
   m_Name: BRAIN
   m_TagString: Untagged
@@ -1348,10 +1349,8 @@ MonoBehaviour:
   - {fileID: 1019405950}
   - {fileID: 349793802}
   - {fileID: 1384951280}
-  spawnItems:
-  - {fileID: 4945272360832684491, guid: ef3873f12e0e4ca4cb0e92ac275f7865, type: 3}
-  - {fileID: 8864225926957707653, guid: 1ff400d992dcf484295c2b583cf4f122, type: 3}
-  amtToSpawn: 6
+  spawnItems: []
+  amtToSpawn: 10
   spawnedItems: []
 --- !u!4 &1356058654
 Transform:
@@ -1382,6 +1381,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   winScore: 30
+  initializer: {fileID: 1356058656}
+--- !u!114 &1356058656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356058652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226df0896ac3d6e488dbd9c81a7ad029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setter: {fileID: 11400000, guid: 83013ddc73b2d22499ef21905a625420, type: 2}
+  spawner: {fileID: 1356058653}
 --- !u!1 &1362295407
 GameObject:
   m_ObjectHideFlags: 0
