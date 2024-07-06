@@ -7,7 +7,7 @@ public class LevelSetup : ScriptableObject
 {
     public int Level;
     public float ScoreAmt;
-
+    public List<string> ItemsToSpawn;
 
     public void SetScore(float score)
     {

@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6759cec9f27154ebc1a85bd0adeade, type: 3}
   m_Name: LevelSetter
   m_EditorClassIdentifier: 
-  Level: 0
-  ScoreAmt: 0
+  Level: -1
+  ScoreAmt: 200
+  ItemsToSpawn:
+  - Money LevelSelect(Clone)
+  - Money LevelSelect(Clone)
+  - Diamonds LevelSelect(Clone)
+  - Diamonds LevelSelect(Clone)
