@@ -5963,6 +5963,7 @@ GameObject:
   - component: {fileID: 698699749}
   - component: {fileID: 698699748}
   - component: {fileID: 698699747}
+  - component: {fileID: 698699750}
   m_Layer: 0
   m_Name: BRAIN
   m_TagString: Untagged
@@ -5984,6 +5985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   winScore: 30
+  initializer: {fileID: 698699750}
 --- !u!114 &698699748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6007,9 +6009,7 @@ MonoBehaviour:
   - {fileID: 1133655590}
   - {fileID: 671437652}
   - {fileID: 841485783}
-  spawnItems:
-  - {fileID: 4945272360832684491, guid: ef3873f12e0e4ca4cb0e92ac275f7865, type: 3}
-  - {fileID: 8864225926957707653, guid: 1ff400d992dcf484295c2b583cf4f122, type: 3}
+  spawnItems: []
   amtToSpawn: 10
   spawnedItems: []
 --- !u!4 &698699749
@@ -6027,6 +6027,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &698699750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698699746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226df0896ac3d6e488dbd9c81a7ad029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setter: {fileID: 11400000, guid: 83013ddc73b2d22499ef21905a625420, type: 2}
+  spawner: {fileID: 698699748}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -6146,7 +6160,7 @@ Transform:
   m_GameObject: {fileID: 749586325}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.597, y: 1.39, z: 1.52}
+  m_LocalPosition: {x: -3.293, y: 1.449, z: 1.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15828,7 +15842,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.1
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1913772871
 MonoBehaviour:
@@ -16509,7 +16523,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.1
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2004204425
 MonoBehaviour:
