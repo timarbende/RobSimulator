@@ -5,16 +5,13 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public List<GameObject> spawnPoints;
-    public List<string> spawnItems;
     public int amtToSpawn;
     private int _spawnPointAmt;
+    
     public List<GameObject> spawnedItems;
 
-    void Start()
-    {
-       // SelectSpawnPoints();
-       // SpawnItems();
-    }
+    public GameObject moneyPrefab;
+    public GameObject diamondPrefab;
 
     public void SelectSpawnPoints()
     {
@@ -35,47 +32,68 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    public void SpawnItems()
+    public void SpawnItems(float scoreLimit)
     {
         SelectSpawnPoints();
-       spawnedItems.Clear();
+        spawnedItems.Clear();
         UpdateSpawnAmt();
-        /*for (int i = 0; i < _spawnPointAmt; i++)
-        {
-            int a = Random.Range(0, spawnItems.Count);
-            var f = Instantiate(spawnItems[a], spawnPoints[i].transform.position, spawnPoints[i].transform.rotation);
-            //  f.SetActive(true);
-            f.transform.parent = spawnPoints[i].transform;
-            spawnedItems.Add(f);
-        }*/
 
-        for (int i = 0; i < spawnItems.Count; i++)
+        List<GameObject> spawnables = getCollectibles(scoreLimit);
+        for (int i = 0; i < spawnables.Count; i++)
         {
-               print("he");
-            if (i >=spawnPoints.Count) break;
-            var f =  Instantiate(Resources.Load("Prefabs/"+spawnItems[i])) as GameObject;
-            f.transform.position = spawnPoints[i].transform.position;
-            //  f.SetActive(true);
-            f.transform.parent = spawnPoints[i].transform;
-            spawnedItems.Add(f);
+            if (i >= spawnPoints.Count)
+                break;
 
+            GameObject newObject = Instantiate(spawnables[i]);
+            newObject.transform.position = spawnPoints[i].transform.position;
+            newObject.transform.parent = spawnPoints[i].transform;
+            spawnedItems.Add(newObject);
         }
-        
     }
 
-    public void SetSpawnedItems(List<string> a)
+    private List<GameObject> getCollectibles(float scoreLimit)
     {
-         spawnItems = new List<string>();
-         spawnedItems.Clear();
-         spawnItems.Clear();
-         foreach (var b in a)
-         {
-             var name = b.Split(' ', 2);
-             spawnItems.Add(name[0]);
-         }
-        
+        if (scoreLimit == 300)   // long game
+        {
+            List<GameObject> ret = new List<GameObject>();
+            for (int i = 0; i < 10; i++) {
+                ret.Add(moneyPrefab);
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                ret.Add(diamondPrefab);
+            }
+            return ret;
+        }
+        else if(scoreLimit == 200)  // short game
+        {
+            List<GameObject> ret = new List<GameObject>();
+            for (int i = 0; i < 10; i++)
+            {
+                ret.Add(moneyPrefab);
+            }
+            for (int i = 0; i < 1; i++)
+            {
+                ret.Add(diamondPrefab);
+            }
+            return ret;
+        }
+        return new List<GameObject>();
     }
-    
+
+    /*public void SetSpawnedItems(List<string> a)
+    {
+        spawnItems = new List<string>();
+        spawnedItems.Clear();
+        spawnItems.Clear();
+        foreach (var b in a)
+        {
+            var name = b.Split(' ', 2);
+            spawnItems.Add(name[0]);
+        }
+
+    }*/
+
     public void UpdateSpawnAmt()
     {
         _spawnPointAmt = spawnPoints.Count;

@@ -368,12 +368,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 207133567559487931}
-  - component: {fileID: 2880647451262330119}
   - component: {fileID: 5374203897604238744}
   - component: {fileID: 7843500038027685179}
   - component: {fileID: 4080117563002159976}
   m_Layer: 0
-  m_Name: monayDetector
+  m_Name: MonayDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -396,21 +395,6 @@ Transform:
   - {fileID: 3372296596173390758}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 270, y: 180, z: 0}
---- !u!114 &2880647451262330119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6788130174672750102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2130382359aaea4a8d9ec4ddbd2e089, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 1
-  spawner: {fileID: 0}
-  EmissionColor: {r: 1, g: 0.2028302, b: 0.2028302, a: 0}
 --- !u!54 &5374203897604238744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -489,7 +473,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2880647451262330119}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ValueDetector, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 6
@@ -504,7 +488,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2880647451262330119}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ValueDetector, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 6

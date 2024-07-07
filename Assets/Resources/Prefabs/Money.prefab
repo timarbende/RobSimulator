@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notCollectible: 0
-  score: 20
+  score: 10
 --- !u!65 &3780050771345134700
 BoxCollider:
   m_ObjectHideFlags: 0

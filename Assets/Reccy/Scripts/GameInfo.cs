@@ -11,7 +11,7 @@ public class GameInfo : MonoBehaviour
     public float score;
     public float winScore;
     public TextMeshPro textScore;
-    public InitializeLEvel initializer;
+    public InitializeLevel initializer;
     public TextMeshPro endText;
     public XRRayInteractor ray;
 

@@ -10,3 +10,16 @@ Environment:
 Furnished Cabin (https://assetstore.unity.com/packages/3d/environments/urban/furnished-cabin-71426)
 Demo City By Versatile Studio (Mobile Friendly) (https://assetstore.unity.com/packages/3d/environments/urban/demo-city-by-versatile-studio-mobile-friendly-269772)
 City Street Skyboxes Vol. 1 (https://assetstore.unity.com/packages/2d/textures-materials/sky/city-street-skyboxes-vol-1-157401)
+
+Fonts:
+Digital 7 by Style-7 (https://www.dafont.com/digital-7.font)
+Love Heist by VinType (https://www.dafont.com/love-heist.font)
+
+Sprites:
+26 Arrow Drawing Vol. 3 (https://www.onlygfx.com/26-arrow-drawing-png-transparent-vector-svg-vol-3/)
+DoodleSketch Lines Red Circle Transparent PNG (https://www.citypng.com/png-download/28981)
+AmpereSoft GmbH Computer Software Drag and drop (https://www.hiclipart.com/free-transparent-background-png-clipart-fwicx)
+
+Materials:
+Cork Wood PBR Material (https://freepbr.com/product/cork-wood-pbr-material/)
+Streaky Plywood PBR Material (https://freepbr.com/product/streaky-plywood-pbr-material/)
