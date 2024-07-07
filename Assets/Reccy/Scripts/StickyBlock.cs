@@ -9,37 +9,22 @@ public class StickyBlock : MonoBehaviour
 {
     public GameObject instantiatedSticky;
     public GameObject spawner;
-    private bool HasInstantiated;
-    
+
     void Start()
     {
-      respawnItem();
-      HasInstantiated = false;
+        respawnItem();
     }
 
-
-    void Update()
+    public void OnStickyTaken()
     {
-        
+        respawnItem();
     }
 
     public void respawnItem()
     {
-        if (spawner.transform.childCount>0) HasInstantiated = true;
-        else
-        {
-            HasInstantiated = false;
-        }
-        
-        if(!HasInstantiated)
-        {
-            GameObject a = Instantiate(instantiatedSticky, spawner.transform);
-            StickyNote stick = a.GetComponent<StickyNote>();
-           // print("AAAAAAAAAAAAAAAAAAA");
-            stick.Respawner(this);
-            HasInstantiated = true;
-        }
-        
-
+        GameObject newSticky = Instantiate(instantiatedSticky, spawner.transform);
+        newSticky.SetActive(true);
+        StickyNote stick = newSticky.GetComponent<StickyNote>();
+        stick.Respawner(this);
     }
 }
