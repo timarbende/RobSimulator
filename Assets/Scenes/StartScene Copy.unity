@@ -6483,6 +6483,10 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1615143947390700997, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3687120592119042364, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -6567,6 +6571,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8970208212967196651, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9023588647234320604, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
       propertyPath: m_Name
       value: sticky
@@ -6582,6 +6590,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9023588647234320604, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1532203805}
+    - targetCorrespondingSourceObject: {fileID: 8970208212967196651, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
 --- !u!1 &1467264411
 GameObject:
@@ -6632,6 +6643,10 @@ PrefabInstance:
     - target: {fileID: -3255402697891918036, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615143947390700997, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3687120592119042364, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
       propertyPath: m_UseDynamicAttach
@@ -6697,6 +6712,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 8970208212967196651, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9023588647234320604, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
       propertyPath: m_Name
       value: sticky
@@ -6712,6 +6731,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9023588647234320604, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 669746380}
+    - targetCorrespondingSourceObject: {fileID: 8970208212967196651, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f4633d3a11b931045be0bff794ef3c2b, type: 3}
 --- !u!1 &1532203799 stripped
 GameObject:

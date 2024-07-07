@@ -16,10 +16,10 @@ public class ValueDetector : MonoBehaviour
     private void Start()
     {
         _valueItems = new List<GameObject>();
-        foreach (var spawn in spawner.spawnedItems)
+        /*foreach (var spawn in spawner.spawnedItems)
         {
             _valueItems.Add(spawn);
-        }
+        }*/
 
         mat = gameObject.transform.GetChild(0).gameObject.GetComponent<Renderer>().material;
      //   Equip(true);

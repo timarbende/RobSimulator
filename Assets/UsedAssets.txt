@@ -5,6 +5,7 @@ Sprite Textures: CodeMonkey Awesome Pulse Radar Effect (https://unitycodemonkey.
 Collectibles:
 Windchimes (windchimes_asc1.wav) from Freesound.org (https://freesound.org/people/sgossner/sounds/375626/)
 Money Pack by Perfect Games (https://assetstore.unity.com/packages/3d/props/money-pack-84433)
+Medieval Gold by Mister Necturus (https://assetstore.unity.com/packages/3d/props/medieval-gold-14162)
 
 Environment:
 Furnished Cabin (https://assetstore.unity.com/packages/3d/environments/urban/furnished-cabin-71426)
