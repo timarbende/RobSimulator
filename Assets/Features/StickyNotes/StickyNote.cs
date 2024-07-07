@@ -15,6 +15,7 @@ public class StickyNote : MonoBehaviour
     public OnDeselect respawnCall;
     private IXRSelectInteractor c;
     private XRBaseInteractable d;
+    private GameObject newParent;
 
     private void OnEnable()
     {
@@ -58,13 +59,15 @@ public class StickyNote : MonoBehaviour
         {
             Vector3 vec = hit.point;
             Vector3 a = gameObject.transform.position - hit.point;
-            projectPos = vec + a * 0.05f;
+            projectPos = vec + a * 0.005f;
 
+            newParent = hit.collider.gameObject;
             canProject = true;
             project(projectPos, hit);
         }
         else
         {
+            newParent = null;
             canProject = false;
             project(Vector3.zero, hit);
         }
@@ -92,11 +95,19 @@ public class StickyNote : MonoBehaviour
 
     public void Attach()
     {
-        if (canProject)
+        if (canProject && newParent != null)
         {
-            gameObject.transform.position = projection.transform.position;
-            gameObject.transform.transform.rotation = projection.transform.rotation;
+            GameObject intermediateParent = new GameObject();
+            intermediateParent.transform.position = projection.transform.position;
+            intermediateParent.transform.transform.rotation = projection.transform.rotation;
+            intermediateParent.transform.SetParent(newParent.transform);
+            //intermediateParent.transform.localScale = Vector3.one;
+
             transform.GetChild(0).transform.localRotation = Quaternion.Euler(new Vector3(0, 180, 0));
+
+            transform.SetParent(intermediateParent.transform);
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
 
             projection.SetActive(false);
         }
