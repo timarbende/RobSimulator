@@ -4,3 +4,9 @@ Sprite Textures: CodeMonkey Awesome Pulse Radar Effect (https://unitycodemonkey.
 
 Collectibles:
 Windchimes (windchimes_asc1.wav) from Freesound.org (https://freesound.org/people/sgossner/sounds/375626/)
+Money Pack by Perfect Games (https://assetstore.unity.com/packages/3d/props/money-pack-84433)
+
+Environment:
+Furnished Cabin (https://assetstore.unity.com/packages/3d/environments/urban/furnished-cabin-71426)
+Demo City By Versatile Studio (Mobile Friendly) (https://assetstore.unity.com/packages/3d/environments/urban/demo-city-by-versatile-studio-mobile-friendly-269772)
+City Street Skyboxes Vol. 1 (https://assetstore.unity.com/packages/2d/textures-materials/sky/city-street-skyboxes-vol-1-157401)
