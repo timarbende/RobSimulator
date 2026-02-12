@@ -2,6 +2,12 @@
 
 A virtual reality experience made for the 3DUI course at the Technical University of Munich with Unity. The project emphasises optimal user experience with techniques introduced during by the course such as landmarking, light emphasis and multioptional interactability. The project is developed for Meta Quest devices.
 
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=hkHzgXVEB_M" target="_blank">
+    <img src="https://img.youtube.com/vi/hkHzgXVEB_M/0.jpg" alt="Project trailer"/>
+  </a>
+</p>
+
 In this game you will break into a house with the aim of acquiring valuables inside. You can interact with all objects, lift up chairs, move doors or stick sticky notes onto stuff. Each mission has a time limit which you can check on your wristwatch. You can see the value of the collected collectibles on the TV screen in the living room. Lastly, you can use the radar device the owner carelessly forgot on the table to locate the valuables more easily.
 
 ## Setup
